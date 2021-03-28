@@ -15,3 +15,4 @@
 
 <br>The result in Python script<br>
 ![image](https://github.com/shihpinhsuan/hw2/blob/master/Screenshot%20from%202021-03-28%2015-44-18.png)
+the frequency in 20Hz
