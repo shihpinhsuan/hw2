@@ -4,6 +4,7 @@
 <br>Open a terminal and Compile the program.<br>
 * `$ git clone https://github.com/shihpinhsuan/hw2.git`
 
+2.results
 <br>The result in uLCD<br>
 
 <br>The result in picoscope<br>
