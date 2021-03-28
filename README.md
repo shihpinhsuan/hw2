@@ -1,5 +1,6 @@
 1.Set up and run program
 <br>Connect wires like below picture<br>
+![image](https://github.com/shihpinhsuan/hw2/blob/master/398369.jpg)
 
 <br>Open a terminal and Compile the program.<br>
 * `$ git clone https://github.com/shihpinhsuan/hw2.git`
