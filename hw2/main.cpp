@@ -86,11 +86,11 @@ void toggle3()
 }
 
 void uLCD_thread() {
-    uLCD.printf("Hello uLCD World\n"); //Default Green on black text
+    uLCD.printf("menu\n"); //Default Green on black text
+     uLCD.printf("fequency selector\n");
     while (1) {    
-        uLCD.color(RED);
-        uLCD.locate(0,2);
-        uLCD.printf("%2d", i);
+        uLCD.locate(0,3);
+        uLCD.printf("%2dHz", i);
         if (j == 0) {
             uLCD.locate(0,4);
             uLCD.printf("select");
