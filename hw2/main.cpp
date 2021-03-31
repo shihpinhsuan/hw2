@@ -40,16 +40,12 @@ void led1_info() {
 }
 
 void Trig_led1()  {
-   // Execute the time critical part first
-   led1 = !led1;
-   // The rest can execute later in user context
    queue.call(led1_info);
 }
 
 void toggle1()
 {
    if (duration_cast<milliseconds>(debounce.elapsed_time()).count() > 200) {
-      //only allow toggle if debounce timer has passed 1s
         if (j == 1) {
             i = i;
         } else if (j == 0) {
@@ -62,7 +58,6 @@ void toggle1()
 void toggle2()
 {
    if (duration_cast<milliseconds>(debounce.elapsed_time()).count() > 200) {
-        //only allow toggle if debounce timer has passed 1s
         if (j == 1) {
             i = i;
         } else if (j == 0) {
@@ -75,7 +70,6 @@ void toggle2()
 void toggle3()
 {
    if (duration_cast<milliseconds>(debounce.elapsed_time()).count() > 200) {
-        //only allow toggle if debounce timer has passed 1s
         if (j == 1) {
             j = 0;
         } else {
@@ -101,25 +95,11 @@ void uLCD_thread() {
     }
 }
 
-void analog_thread() {
-    for (int l = 0; l < sample; l++){
-            aout = Ain;
-            ADCdata[l] = Ain;
-            ThisThread::sleep_for(1000ms/sample);
-        }
-        for ( l = 0; l < sample; l++) {
-            printf("%f\r\n", ADCdata[l]);
-            ThisThread::sleep_for(100ms);
-        }
-}
-
 int main()
 {
     thread.start(uLCD_thread);
-    // thread.start(analog_thread);
 
     t.start(callback(&queue, &EventQueue::dispatch_forever));
-   // 'Trig_led1' will execute in IRQ context
    sw2.rise(Trig_led1);
 
     debounce.start();
