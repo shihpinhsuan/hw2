@@ -109,13 +109,15 @@ int main()
 
     while (1) {
         while (j == 1) {
-            for (float k = 0.0; k < 10.0/11.0; k += 10.0/11/9) {
+            for (float k = 0.0; k < 10.0/11.0; k += 10.0/11/18) {
                 aout = k;
-                ThisThread::sleep_for(100ms/2/i);
+                wait_us(800000 / i / 20);
+                //ThisThread::sleep_for(100ms/2/i);
             }
-            for (float h = 10.0/11 / 2; h >= 0; h -= 10.0/11/2) {
+            for (float h = 10.0/11; h >= 0; h -= 10.0/11/2) {
                 aout = h;
-                ThisThread::sleep_for(100ms/2/i);
+                wait_us(800000 / i / 20);
+                //ThisThread::sleep_for(100ms/2/i);
             }
         }
         ThisThread::sleep_for(100ms);
